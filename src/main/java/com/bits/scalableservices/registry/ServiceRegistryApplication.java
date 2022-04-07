@@ -1,4 +1,4 @@
-package com.roopika.service.registry;
+package com.bits.scalableservices.registry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
