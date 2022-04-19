@@ -1,5 +1,18 @@
+spring:
+  application:
+    name: service-registry
+
 server:
-  port: 8761
+  port: ${port:8761}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
 
 eureka:
   client:

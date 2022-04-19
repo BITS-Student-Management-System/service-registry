@@ -1,5 +1,5 @@
-#define base docker image
-FROM openjdk:8-jdk-alpine
-LABEL maintainer="roopika.srinivas"
-ADD target/service-registry-0.0.1-SNAPSHOT.jar service-registry.jar
-ENTRYPOINT ["java","-jar","service-registry.jar"]
+FROM adoptopenjdk/openjdk14:ubi
+COPY target/*.jar app.jar
+ENV JAVA_OPTS=""
+EXPOSE 8761
+ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
